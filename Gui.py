@@ -7,6 +7,7 @@ import sqlite3
 
 
 class ciclistas:
+    
     pass
 
 
@@ -33,19 +34,20 @@ def unhovering2(event):
 
 
 def despliegue1():
-    animation = 0
+    
     
 
-    if menus1.menu_desplegable == False:
+    if menus1.menu_desplegable == False and menus1.animation == 0:
         menus1.menu_desplegable = True
 
-        while animation < 0.2 :
-
-            if round(animation,2) == 0.19:
-                animation = 0.2     
+        while menus1.animation < 0.2 :
+            menus1.animation += 0.01
+            if round(menus1.animation,2) == 0.19:
+                menus1.animation = 0.2
+                     
                    
-            menus1.frame_3.place(relheight = 1, relwidth = animation, rely = 0, relx = 0.04)
-            animation += 0.01
+            menus1.frame_3.place(relheight = 1, relwidth = menus1.animation, rely = 0, relx = 0.04)
+            
 
             menus1.frame_3.update_idletasks()
             menus1.frame_3.update()
@@ -55,19 +57,21 @@ def despliegue1():
             
 
 
-    elif menus1.menu_desplegable == True:
+    elif menus1.menu_desplegable == True and menus1.animation == 0.2 :
         menus1.menu_desplegable = False
         
-        animation = 0.2
+        #animation = 0.2
 
-        while animation > 0:
-
-            if round(animation,2) == 0.01:
-                animation = 0
+        while menus1.animation > 0:
+            menus1.animation -= 0.01
+            if round(menus1.animation,2) == 0.01:
+                menus1.animation = 0
+                
                 
 
-            menus1.frame_3.place(relheight = 1, relwidth = animation, rely = 0, relx = 0.04)
-            animation -= 0.01
+            menus1.frame_3.place(relheight = 1, relwidth = menus1.animation, rely = 0, relx = 0.04)
+            
+
                 
 
             menus1.frame_3.update_idletasks()
@@ -83,25 +87,9 @@ class menus1 ():
     principal.title("Ciclistas S X A")
     principal.geometry("1200x720")
     principal.configure(background = "#503A99")
+    animation = 0
 
-
-    principal.overrideredirect(True) # turns off title bar, geometry
-    #principal.geometry('400x100+200+200') # set new geometry
-
-    # make a frame for the title bar
-    title_bar = Frame(principal, bg='#2e2e2e', relief='raised', bd=2,highlightthickness=0)
-
-    # put a close button on the title bar
-    close_button = Button(title_bar, text='X', command=principal.destroy,bg="#2e2e2e",padx=2,pady=2,activebackground='red',bd=0,font="bold",fg='white',highlightthickness=0)
-
-    # a canvas for the main area of the window
-    window = Canvas(principal, bg='#2e2e2e',highlightthickness=0)
-
-    title_bar.pack(expand=1, fill=X)
-    close_button.pack(side=RIGHT)
-    window.pack(expand=1, fill=BOTH)
-    xwin=None
-    ywin=None
+   
 
 
     
