@@ -8,6 +8,7 @@ import sqlite3
 
 class ciclistas:
     
+    
     pass
 
 
@@ -104,18 +105,18 @@ class menus1 ():
 
     despliegue = 0
 
-    C_gestions_icon = PhotoImage(file=r"D:\Visual Studio Code\Python\icons\grid32b.PNG")
-    C_gestions_icon_white = PhotoImage(file=r"D:\Visual Studio Code\Python\icons\grid32.PNG")
+    C_gestions_icon = PhotoImage(file=r"D:\Visual Studio Code\Python\Maplicacion5645\icons\grid32b.PNG")
+    C_gestions_icon_white = PhotoImage(file=r"D:\Visual Studio Code\Python\Maplicacion5645\icons\grid32.PNG")
     
-    reportes = PhotoImage(file =r"D:\Visual Studio Code\Python\icons\bar-chart.PNG")
+    reportes = PhotoImage(file =r"D:\Visual Studio Code\Python\Maplicacion5645\icons\bar-chart.PNG")
 
-    about = PhotoImage(file = r"D:\Visual Studio Code\Python\icons\about.PNG")
+    about = PhotoImage(file = r"D:\Visual Studio Code\Python\Maplicacion5645\icons\about.PNG")
 
-    salida = PhotoImage(file = r"D:\Visual Studio Code\Python\icons\salida.PNG")
+    salida = PhotoImage(file = r"D:\Visual Studio Code\Python\Maplicacion5645\icons\salida.PNG")
 
 
-    a_actividades_icon = PhotoImage (file=r"D:\Visual Studio Code\Python\icons\archive32.PNG")
-    a_actividades_white = PhotoImage (file=r"D:\Visual Studio Code\Python\icons\archive32W.PNG")
+    a_actividades_icon = PhotoImage (file=r"D:\Visual Studio Code\Python\Maplicacion5645\icons\archive32.PNG")
+    a_actividades_white = PhotoImage (file=r"D:\Visual Studio Code\Python\Maplicacion5645\icons\archive32W.PNG")
 
     frame_1 = Frame(principal, bg="#503A99")
     frame_2 = Frame(principal, bg="#281C4D")
