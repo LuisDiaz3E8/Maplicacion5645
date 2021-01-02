@@ -4,17 +4,35 @@ import PIL
 import sqlite3
 
 
+# Base de Datos. Table de los datos de los ciclistas
 
-
-class ciclistas:
+conn = sqlite3.connect('Ciclistaslocos.db')
+tablesCreation = conn.cursor()
+# Nota: el nombre de la base de datos simplemente me quede sin ideas ;)
+tablesCreation.execute (""" CREATE TABLE IF NOT EXISTS Ciclistas (
+   
+    cedula NVARCHAR(100),
+    nombre NVARCHAR(100),
+    apellido NVARCHAR(100),
+    Fecha_de_nacimiento NVARCHAR(100),
+    Tipo_de_sangre NVARCHAR(100),
+    Size_de_bicicleta NVARCHAR(100),
+    Size_de_uniforme NVARCHAR(100),
+    Telefono NVARCHAR(100),
+    Celular NVARCHAR(100),
+    Email NVARCHAR(100),
+    Direccion NVARCHAR(100),
+    Persona_de_contacto NVARCHAR(100),
+    Telefono_de_contacto NVARCHAR(100),
+    Fecha_de_registro DATE 
     
-    
-    pass
+    )""")
+
+conn.commit
+conn.close
 
 
 
-class Actividades:
-    pass
 
 def hovering(hover):
 
@@ -190,15 +208,7 @@ def menu_update():
 
 
 
-
-
-
-
-
-
-
-
-
+ 
 menu_update()
 
 
