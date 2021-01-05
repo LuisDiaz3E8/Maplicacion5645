@@ -2,6 +2,7 @@ from tkinter import *
 import time
 import PIL
 import sqlite3
+import form # importando las varibables y funciones de otro codigo que ya habia hecho
 
 
 # Base de Datos. Table de los datos de los ciclistas
@@ -11,7 +12,7 @@ tablesCreation = conn.cursor()
 # Nota: el nombre de la base de datos simplemente me quede sin ideas ;)
 tablesCreation.execute (""" CREATE TABLE IF NOT EXISTS Ciclistas (
    
-    cedula NVARCHAR(100),
+    cedula INT,
     nombre NVARCHAR(100),
     apellido NVARCHAR(100),
     Fecha_de_nacimiento NVARCHAR(100),
@@ -30,6 +31,7 @@ tablesCreation.execute (""" CREATE TABLE IF NOT EXISTS Ciclistas (
 
 conn.commit
 conn.close
+
 
 
 
@@ -147,8 +149,8 @@ class menus1 ():
     etiqueta5 = Button(frame_1, text= "Salir",bg = buttonColor, image = salida, relief = FLAT)
 
 
-    subMenu = Button(frame_3, text ="Ver listado de ciclistas", bg= botonesSec, relief = FLAT)
-    subMenu2 = Button(frame_3, text = "Agregar Ciclistas", bg = botonesSec, relief = FLAT)
+    subMenu = Button(frame_3, text ="Ver listado de ciclistas", bg= botonesSec, relief = FLAT, )
+    subMenu2 = Button(frame_3, text = "Agregar Ciclistas", bg = botonesSec, relief = FLAT, command = form.formulario)
     subMenu3 = Button(frame_3, text = "Editar Ciclistas", bg = botonesSec, relief = FLAT)
     subMenu4 = Button(frame_3, text = "Eliminar Ciclistas", bg = botonesSec, relief = FLAT)
 
