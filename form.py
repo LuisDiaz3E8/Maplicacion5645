@@ -4,6 +4,7 @@ import datetime
 import sqlite3
 
 
+
 conn = sqlite3.connect('Ciclistaslocos.db')
 
 tipoSangre = [
@@ -31,7 +32,7 @@ def formulario():
     formulario.geometry("400x700")
     formulario.configure(background = "#503A99")
 
-    Valores = []
+    
 
 
     
@@ -159,7 +160,8 @@ def formulario():
         getDireccion = direccion.get()
         getContacto = contactop.get()
         getN_contacto   = ncontacto.get()
-        fechaDe_registro = datetime.date.today
+        fechaDe_registro = datetime.date.today()
+
 
         # Valores = [
         #     getCedula, 
@@ -178,16 +180,31 @@ def formulario():
         tabla_introducion = conn.cursor()
         
         # los signos de interrogacion son placeholders dicho en español estan ahi hasta que se le assigne un valor
-        sql = """INSERT INTO Ciclistas(cedula, nombre, apellido) Values (?, ?, ?, ?, ?, ? , ?, ? , ?, ?, ? ,?, ?)"""
+        sql = """INSERT INTO Ciclistas(
+            cedula, 
+            nombre, 
+            apellido, 
+            Tipo_de_sangre, 
+            Size_de_bicicleta, 
+            Size_de_uniforme, 
+            Telefono, 
+            Celular, 
+            Email, 
+            Direccion,
+            Persona_de_contacto,
+            Telefono_de_contacto,
+            Fecha_de_registro) 
+             
+             Values (?, ?, ?, ?, ?, ? , ?, ? , ?, ?, ? ,?, ?)"""
         tabla_introducion.execute(sql, (
             getCedula,
             getNombre, 
             getApellido, 
-            getTelefono, 
-            getCelular, 
-            getTipo_Sangre, 
+            getTipo_Sangre,  
+            getSize_bicicleta,  
             getSize_uniforme, 
-            getSize_bicicleta,
+            getTelefono,
+            getCelular,
             getEmail,
             getDireccion,
             getContacto,
@@ -196,7 +213,14 @@ def formulario():
             
             ))
 
+        
+
         conn.commit() 
+
+        # tabla_introducion.execute("SELECT * FROM Ciclistas")
+        # for items in tabla_introducion:
+        #     Gui.menus1.listado_de_ciclistas.insert(parent="",index="end", values= items)
+
         conn.close()
         formulario.destroy()
 
